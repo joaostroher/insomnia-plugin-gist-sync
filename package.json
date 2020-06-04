@@ -1,0 +1,20 @@
+{
+  "name": "insomnia-plugin-gist-sync",
+  "version": "0.0.1",
+  "author": "João Miguel Ströher <joao.stroher@gmail.com>",
+  "description": "Gist Sync Plugin for Insomnia",
+  "license": "MIT",
+  "repository": "https://github.com/joaostroher/insomnia-plugin-gist-sync",
+  "bugs": {
+    "url": "https://github.com/joaostroher/insomnia-plugin-gist-sync/issues"
+  },
+  "main": "src/index.js",
+  "insomnia": {
+    "name": "gist-sync",
+    "displayName": "Gist Sync Plugin",
+    "description": "Gist Sync Plugin"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
