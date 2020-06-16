@@ -8,7 +8,7 @@ Install the `insomnia-plugin-gist-sync` plugin from Preferences > Plugins.
 
 ## Configure
 
-1. Create a [personal access token](https://help.github.com/pt/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to your GitHub account, with `gist` scope/permission.
+1. Create a [personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) to your GitHub account, with `gist` scope/permission.
 
 2. Go to Insomnia, click on Insomnia Main Menu, and click on "Gist Sync - Configure":
 
