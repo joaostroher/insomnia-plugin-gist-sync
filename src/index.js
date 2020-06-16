@@ -16,7 +16,7 @@ async function promptApiKey(context, forceReprompt) {
       const apiKey = await context.app.prompt(
         'Gist Sync - Configuration - API Key',
         {
-          label: 'Put your gist api key here:',
+          label: 'Put your GitHub API Key here:',
           defaultValue: oldApiKey,
           submitName: 'Save',
           cancelable: true,
@@ -39,10 +39,10 @@ async function promptGistKey(context, forceReprompt) {
   if (!oldGistKey || forceReprompt) {
     try {
       const gistKey = await context.app.prompt(
-        'Gist Sync - Configuration - Gist Key',
+        'Gist Sync - Configuration - Gist ID',
         {
           label:
-            'Put your gist key here (if not present, a new gist will be created):',
+            'Put your Gist ID here (if not present, a new gist will be created):',
           defaultValue: oldGistKey,
           submitName: 'Save',
           cancelable: true,
@@ -69,13 +69,13 @@ module.exports.workspaceActions = [
       if (!apiKey) {
         await context.app.alert(
           'Configuration error',
-          'The Gist API Key must be configured',
+          'The GitHub API Key must be configured',
         );
         return;
       }
       const gistKey = await promptGistKey(context, false);
       if (!gistKey) {
-        if (!confirm('The Gist Key not informated, will be create a new gist?'))
+        if (!confirm('The Gist ID not informated, will be create a new Gist?'))
           return;
       }
       const data = await context.data.export.insomnia({
@@ -121,7 +121,7 @@ module.exports.workspaceActions = [
         console.log('apiKey', apiKey);
         await context.app.alert(
           'Configuration error',
-          'The Gist API Key must be configured',
+          'The GitHub API Key must be configured',
         );
         return;
       }
@@ -129,7 +129,7 @@ module.exports.workspaceActions = [
       if (!gistKey) {
         await context.app.alert(
           'Configuration error',
-          'The Gist Key must be configured',
+          'The Gist ID must be configured',
         );
         return;
       }

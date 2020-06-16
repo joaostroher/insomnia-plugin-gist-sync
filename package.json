@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-gist-sync",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "João Miguel Ströher <joao.stroher@gmail.com>",
   "description": "Gist Sync Plugin for Insomnia",
   "license": "MIT",
@@ -12,7 +12,13 @@
   "insomnia": {
     "name": "gist-sync",
     "displayName": "Gist Sync Plugin",
-    "description": "Gist Sync Plugin"
+    "description": "That plugin allows users sync workspaces with gist of GitHub.",
+    "images": {
+      "icon": "icon.svg"
+    },
+    "applications": {
+      "core": "*"
+    }
   },
   "dependencies": {
     "axios": "^0.19.2"
