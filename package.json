@@ -18,6 +18,9 @@
     "watch": "yarn build --watch"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
   "insomnia": {
     "name": "gist-sync",
     "displayName": "Gist Sync",
