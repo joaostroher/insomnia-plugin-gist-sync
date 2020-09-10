@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-gist-sync",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "author": "João Miguel Ströher <joao.stroher@gmail.com>",
   "description": "Gist Sync Plugin for Insomnia",
   "license": "MIT",
@@ -13,10 +13,14 @@
   "bugs": {
     "url": "https://github.com/joaostroher/insomnia-plugin-gist-sync/issues"
   },
-  "main": "src/index.js",
+  "scripts": {
+    "build": "babel src --extensions \".ts,.js,.tsx\" --out-dir dist",
+    "watch": "yarn build --watch"
+  },
+  "main": "dist/index.js",
   "insomnia": {
     "name": "gist-sync",
-    "displayName": "Gist Sync Plugin",
+    "displayName": "Gist Sync",
     "description": "That plugin allows users sync workspaces with gist of GitHub.",
     "images": {
       "icon": "icon.svg"
@@ -26,6 +30,34 @@
     }
   },
   "dependencies": {
-    "axios": "^0.19.2"
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/preset-react": "^7.10.1",
+    "@babel/preset-typescript": "^7.10.1",
+    "@types/react": "^16.9.41",
+    "@types/styled-components": "^5.1.0",
+    "axios": "^0.19.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.5"
   }
 }

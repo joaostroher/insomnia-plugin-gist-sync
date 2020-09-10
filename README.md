@@ -12,13 +12,15 @@ Install the `insomnia-plugin-gist-sync` plugin from Preferences > Plugins.
 
 2. Go to Insomnia, click on Insomnia Main Menu, and click on "Gist Sync - Configure":
 
-![Plugin Screenshot](/screenshot.jpg)
+![Plugin Screenshot](/docs/screenshot.jpg)
 
-3. Follow the steps, filling with GitHub API Key (generated on step 1), and after with your Gist ID (if you have used this plugin).
+3. Filling with GitHub API Key (generated on step 1), select a existent Gist or select "Create new..." to create a new Gist.
 
-- If you kept Gist ID empty, will be generate a new private Gist on your account.
+![Configuration Plugin Screenshot](/docs/screenshot-configuration.png)
 
 ## Usage
 
 - Click on "Gist Sync - Send" to send your workspaces to Gist.
 - Click on "Gist Sync - Receive" to get your workspaces from Gist.
+
+> Note that currently using the same Gist on more than one computer can result in problems. When the "Receive" button is pressed, all remote content is combined with local content by Insomnia. If you are really interested on preserving integrity working with a team, please [support insomnia](https://insomnia.rest/pricing/) with a team membership.
