@@ -4,7 +4,7 @@ This is a plugin for [Insomnia](https://insomnia.rest) that allows users sync wo
 
 ## Installation
 
-[Click here ](insomnia://plugins/install?name=insomnia-plugin-gist-sync) or install the `insomnia-plugin-gist-sync` plugin from Preferences > Plugins.
+Install the `insomnia-plugin-gist-sync` plugin from Preferences > Plugins.
 
 ## Configure
 
