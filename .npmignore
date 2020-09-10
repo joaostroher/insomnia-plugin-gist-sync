@@ -1,0 +1,12 @@
+/src
+/.github
+/docs
+.babelrc
+.editorconfig
+.eslintignore
+.eslintrc.json
+.gitignore
+.prettierrc
+icon.svg
+package-lock.json
+tsconfig.json
