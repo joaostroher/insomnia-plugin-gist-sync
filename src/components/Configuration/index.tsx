@@ -61,6 +61,7 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
       <Select
         label="Provider"
         options={[{ label: 'GitHub', value: 'github' }]}
+        defaultValue="github"
       />
       <Input
         label="Gist API Key"
