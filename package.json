@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-gist-sync",
-  "version": "0.2.7",
+  "version": "0.2.9",
   "author": "João Miguel Ströher <joao.stroher@gmail.com>",
   "description": "Gist Sync Plugin for Insomnia",
   "license": "MIT",
@@ -30,10 +30,10 @@
     }
   },
   "dependencies": {
+    "@emotion/core": "^10.0.35",
     "axios": "^0.19.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "styled-components": "^4.4.0"
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -45,7 +45,6 @@
     "@babel/preset-typescript": "^7.10.1",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
-    "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "eslint": "^7.3.1",
