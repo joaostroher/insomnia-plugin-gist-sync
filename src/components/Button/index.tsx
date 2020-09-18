@@ -1,6 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 
-import { StyledButton } from './styles';
+import { buttonStyle } from './styles';
 
 interface IButtonProps {
   label?: string | null | undefined;
@@ -10,9 +10,14 @@ interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = ({ label, onClick, closeModal }) => {
   return (
-    <StyledButton onClick={onClick} data-close-modal={closeModal}>
+    <button
+      type="button"
+      onClick={onClick}
+      data-close-modal={closeModal}
+      css={buttonStyle}
+    >
       {label}
-    </StyledButton>
+    </button>
   );
 };
 

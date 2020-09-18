@@ -1,16 +1,16 @@
-import styled from 'styled-components';
+import { css } from '@emotion/core';
 
-export const Container = styled.div`
+export const containerStyle = css`
   display: flex;
   flex-direction: column;
 `;
 
-export const StyledRawLabel = styled.label`
+export const labelStyle = css`
   font-weight: bold;
   padding-bottom: 5px;
 `;
 
-export const StyledRawSelect = styled.select`
+export const selectStyle = css`
   background-color: #f9f9f9;
   border: 1px solid #eee;
   padding: 7px;

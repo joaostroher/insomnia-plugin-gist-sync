@@ -5,13 +5,14 @@ import Input from '../Input';
 import Select, { ISelectOption } from '../Select';
 import Button from '../Button';
 
-import { Container, ActionsContainer } from './styles';
+import { containerStyle, actionsContainerStyle } from './styles';
 
 interface IConfigurationProps {
   insomniaContext: IInsomniaContext;
 }
 
 const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
+  const [provider, setProvider] = useState<string | null>('github');
   const [apiKey, setApiKey] = useState<string | null>('');
   const [gistKey, setGistKey] = useState<string | null>('');
   const [gistOptions, setGistsOptions] = useState<ISelectOption[]>([]);
@@ -57,11 +58,12 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
     execute();
   }, [apiKey, gistKey]);
   return (
-    <Container>
+    <div css={containerStyle}>
       <Select
         label="Provider"
         options={[{ label: 'GitHub', value: 'github' }]}
-        defaultValue="github"
+        value="provider"
+        onChange={event => setProvider(event.target.value)}
       />
       <Input
         label="Gist API Key"
@@ -74,11 +76,11 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
         value={gistKey}
         onChange={event => setGistKey(event.target.value)}
       />
-      <ActionsContainer>
+      <div css={actionsContainerStyle}>
         <Button label="Cancel" closeModal />
         <Button label="Confirm" onClick={handleConfirm} closeModal />
-      </ActionsContainer>
-    </Container>
+      </div>
+    </div>
   );
 };
 

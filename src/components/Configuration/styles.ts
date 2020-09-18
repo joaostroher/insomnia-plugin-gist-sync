@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import { css } from '@emotion/core';
 
-export const Container = styled.div`
+export const containerStyle = css`
   margin: 10px;
 `;
 
-export const ActionsContainer = styled.div`
+export const actionsContainerStyle = css`
   margin-top: 10px;
   display: flex;
   flex-direction: row;

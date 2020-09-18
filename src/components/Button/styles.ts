@@ -1,8 +1,6 @@
-import styled from 'styled-components';
+import { css } from '@emotion/core';
 
-export const StyledButton = styled.button.attrs({
-  type: 'button',
-})`
+export const buttonStyle = css`
   background-color: #f9f9f9;
   border: 1px solid #eee;
   padding: 7px;

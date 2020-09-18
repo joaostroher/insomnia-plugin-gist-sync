@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, StyledRawLabel, StyledRawInput } from './styles';
+import { containerStyle, inputStyle, labelStyle } from './styles';
 
 type InputOnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => void;
 
@@ -12,10 +12,15 @@ interface IInputProps {
 
 const Input: React.FC<IInputProps> = ({ label, value, onChange }) => {
   return (
-    <Container>
-      <StyledRawLabel>{label}</StyledRawLabel>
-      <StyledRawInput type="text" value={value || ''} onChange={onChange} />
-    </Container>
+    <div css={containerStyle}>
+      <label css={labelStyle}>{label}</label>
+      <input
+        css={inputStyle}
+        type="text"
+        value={value || ''}
+        onChange={onChange}
+      />
+    </div>
   );
 };
 

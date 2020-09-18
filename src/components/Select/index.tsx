@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container, StyledRawLabel, StyledRawSelect } from './styles';
+import { containerStyle, labelStyle, selectStyle } from './styles';
 
 type SelectOnChangeEvent = (
   event: React.ChangeEvent<HTMLSelectElement>,
@@ -27,9 +27,10 @@ const Select: React.FC<ISelectProps> = ({
   defaultValue,
 }) => {
   return (
-    <Container>
-      <StyledRawLabel>{label}</StyledRawLabel>
-      <StyledRawSelect
+    <div css={containerStyle}>
+      <label css={labelStyle}>{label}</label>
+      <select
+        css={selectStyle}
         value={value || ''}
         onChange={onChange}
         defaultValue={defaultValue}
@@ -39,8 +40,8 @@ const Select: React.FC<ISelectProps> = ({
             {option.label}
           </option>
         ))}
-      </StyledRawSelect>
-    </Container>
+      </select>
+    </div>
   );
 };
 
