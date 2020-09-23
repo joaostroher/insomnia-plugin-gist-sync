@@ -7,6 +7,5 @@
 .eslintrc.json
 .gitignore
 .prettierrc
-icon.svg
 package-lock.json
 tsconfig.json
