@@ -6,6 +6,7 @@ export const buttonStyle = css`
   padding: 7px;
   border-radius: 3px;
   margin: 5px 0;
+  color: #333333;
 
   &:hover {
     background-color: #fff;

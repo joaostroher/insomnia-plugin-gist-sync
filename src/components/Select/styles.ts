@@ -15,6 +15,7 @@ export const selectStyle = css`
   border: 1px solid #eee;
   padding: 7px;
   border-radius: 3px;
+  color: #333333;
 
   &:focus {
     background-color: #fff;

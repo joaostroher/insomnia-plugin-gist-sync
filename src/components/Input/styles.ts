@@ -16,6 +16,7 @@ export const inputStyle = css`
   padding: 7px;
   border-radius: 3px;
   margin: 0;
+  color: #333333;
 
   &:focus {
     background-color: #fff;
