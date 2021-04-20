@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-gist-sync",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "author": "João Miguel Ströher <joao.stroher@gmail.com>",
   "description": "Gist Sync Plugin for Insomnia",
   "license": "MIT",
