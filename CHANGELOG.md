@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.6](https://github.com/joaostroher/insomnia-plugin-gist-sync/compare/v0.3.5...v0.3.6) (2021-10-08)
+
+
+### Others
+
+* **deps:** bump browserslist from 4.14.2 to 4.16.6 ([#15](https://github.com/joaostroher/insomnia-plugin-gist-sync/issues/15)) ([fe755a3](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/fe755a34fb713db4bee8b6a250b721a584dab7ae))
+* **deps:** bump path-parse from 1.0.6 to 1.0.7 ([#16](https://github.com/joaostroher/insomnia-plugin-gist-sync/issues/16)) ([49e014d](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/49e014ded08a2be2a6d5f9b2aaf2826c7b4095b4))
+
 ### 0.3.5 (2021-05-11)
 
 ### Others
