@@ -15,6 +15,7 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
   const [provider, setProvider] = useState<string | null>('github');
   const [apiKey, setApiKey] = useState<string | null>('');
   const [gistKey, setGistKey] = useState<string | null>('');
+  const [ignoredWorkspaces, setIgnoredWorkspaces] = useState<string | null>('');
   const [gistOptions, setGistsOptions] = useState<ISelectOption[]>([]);
 
   useEffect(() => {
@@ -44,8 +45,12 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
       const newGistKey = await insomniaContext.store.getItem(
         'gist-sync:gist-key',
       );
+      const newIgnoredWorkspaces = await insomniaContext.store.getItem(
+        'gist-sync:ignored-workspaces',
+      );
       setApiKey(newApiKey);
       setGistKey(newGistKey);
+      setIgnoredWorkspaces(newIgnoredWorkspaces);
     }
     load();
   }, []);
@@ -54,9 +59,13 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
     async function execute() {
       await insomniaContext.store.setItem('gist-sync:api-key', apiKey ?? '');
       await insomniaContext.store.setItem('gist-sync:gist-key', gistKey ?? '');
+      await insomniaContext.store.setItem(
+        'gist-sync:ignored-workspaces',
+        ignoredWorkspaces ?? '',
+      );
     }
     execute();
-  }, [apiKey, gistKey]);
+  }, [apiKey, gistKey, ignoredWorkspaces]);
   return (
     <div css={containerStyle}>
       <Select
@@ -75,6 +84,12 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
         options={gistOptions}
         value={gistKey}
         onChange={event => setGistKey(event.target.value)}
+      />
+      <Input
+        label="Ignore Workspaces"
+        value={ignoredWorkspaces}
+        placeholder="add comma-separated workspace names"
+        onChange={event => setIgnoredWorkspaces(event.target.value)}
       />
       <div css={actionsContainerStyle}>
         <Button label="Cancel" closeModal />
