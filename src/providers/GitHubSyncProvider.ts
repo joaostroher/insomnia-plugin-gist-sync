@@ -6,6 +6,8 @@ class GitHubSyncProvider extends SyncProvider {
 
   private static STORE_KEY_GIST_ID = 'gist-sync:gist-key';
 
+  private static STORE_KEY_IGNORED_WORKSPACES = 'gist-sync:ignored-workspaces';
+
   async receive(): Promise<void> {
     const apiKey = await this.getInsomniaStoreData(
       GitHubSyncProvider.STORE_KEY_API_KEY,
@@ -37,7 +39,13 @@ class GitHubSyncProvider extends SyncProvider {
       GitHubSyncProvider.STORE_KEY_GIST_ID,
     );
 
-    const content = await this.exportFromInsomnia();
+    const ignoreWorkspaces = await this.getInsomniaStoreData(
+      GitHubSyncProvider.STORE_KEY_IGNORED_WORKSPACES,
+    );
+
+    const content = await this.exportFromInsomnia({
+      ignoreWorkspaces: ignoreWorkspaces?.split(','),
+    });
     const gitHubService = new GitHubService(apiKey);
 
     if (!gistId) {

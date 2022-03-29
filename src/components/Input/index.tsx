@@ -7,10 +7,16 @@ type InputOnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => void;
 interface IInputProps {
   label?: string | null | undefined;
   value?: string | null | undefined;
+  placeholder?: string;
   onChange?: InputOnChangeEvent;
 }
 
-const Input: React.FC<IInputProps> = ({ label, value, onChange }) => {
+const Input: React.FC<IInputProps> = ({
+  label,
+  value,
+  placeholder,
+  onChange,
+}) => {
   return (
     <div css={containerStyle}>
       <label css={labelStyle}>{label}</label>
@@ -18,6 +24,7 @@ const Input: React.FC<IInputProps> = ({ label, value, onChange }) => {
         css={inputStyle}
         type="text"
         value={value || ''}
+        placeholder={placeholder}
         onChange={onChange}
       />
     </div>
