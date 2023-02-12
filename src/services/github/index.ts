@@ -70,5 +70,5 @@ class GitHubService {
   }
 }
 
-export { IGist };
+export { IGist, IGistFile };
 export default GitHubService;

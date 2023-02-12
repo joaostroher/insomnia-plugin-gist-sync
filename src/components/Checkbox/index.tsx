@@ -6,8 +6,7 @@ type InputOnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => void;
 
 interface IInputProps {
   label?: string | null | undefined;
-  value?: string | null | undefined;
-  disabled?: boolean | null | undefined;
+  value?: boolean | null | undefined;
   placeholder?: string;
   onChange?: InputOnChangeEvent;
 }
@@ -17,19 +16,18 @@ const Input: React.FC<IInputProps> = ({
   value,
   placeholder,
   onChange,
-  disabled,
 }) => {
   return (
     <div css={containerStyle}>
-      <label css={labelStyle}>{label}</label>
+      <label className='inline-block'>
       <input
         css={inputStyle}
-        type='text'
-        value={value || ''}
+				type='checkbox'
+        checked={value || false}
         placeholder={placeholder}
         onChange={onChange}
-        disabled={disabled || false}
       />
+	  {label}</label>
     </div>
   );
 };
