@@ -32,31 +32,30 @@ class Aes256Cipher {
   }
 
   decrypt(encrypted: string): string {
-    if (!input) {
+    if (!encrypted) {
       throw new TypeError('Provided "encrypted" must be a non-empty string');
     }
 
     const sha256 = crypto.createHash('sha256');
     sha256.update(this.key);
 
-    const input = encrypted;
-    input = Buffer.from(encrypted, 'base64');
+    const buffer = Buffer.from(encrypted, 'base64');
 
-    if (input.length < 17) {
+    if (buffer.length < 17) {
       throw new TypeError(
         'Provided "encrypted" must decrypt to a non-empty string',
       );
     }
 
     // Initialization Vector
-    const iv = input.slice(0, 16);
+    const iv = buffer.slice(0, 16);
     const decipher = crypto.createDecipheriv(
       CIPHER_ALGORITHM,
       sha256.digest(),
       iv,
     );
 
-    const ciphertext = input.slice(16);
+    const ciphertext = buffer.slice(16);
 
     return decipher.update(ciphertext) + decipher.final();
   }
