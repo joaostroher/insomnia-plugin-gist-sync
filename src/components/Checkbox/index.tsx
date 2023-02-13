@@ -19,15 +19,16 @@ const Input: React.FC<IInputProps> = ({
 }) => {
   return (
     <div css={containerStyle}>
-      <label className='inline-block'>
-      <input
-        css={inputStyle}
-				type='checkbox'
-        checked={value || false}
-        placeholder={placeholder}
-        onChange={onChange}
-      />
-	  {label}</label>
+      <label className="inline-block">
+        <input
+          css={inputStyle}
+          type="checkbox"
+          checked={value || false}
+          placeholder={placeholder}
+          onChange={onChange}
+        />
+        {label}
+      </label>
     </div>
   );
 };

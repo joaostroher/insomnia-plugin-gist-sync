@@ -24,7 +24,7 @@ const Input: React.FC<IInputProps> = ({
       <label css={labelStyle}>{label}</label>
       <input
         css={inputStyle}
-        type='text'
+        type="text"
         value={value || ''}
         placeholder={placeholder}
         onChange={onChange}

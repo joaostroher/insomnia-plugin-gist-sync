@@ -34,10 +34,13 @@ class GitHubSyncProvider extends SyncProvider {
     await this.importToInsomnia(decryptedContent);
   }
 
-  private async resolveFileContent(gitHubService: GitHubService, file: IGistFile): Promise<string> {
+  private async resolveFileContent(
+    gitHubService: GitHubService,
+    file: IGistFile,
+  ): Promise<string> {
     if (!file.truncated) return file.content;
 
-	return await gitHubService.getByUrl(file.raw_url);
+    return await gitHubService.getByUrl(file.raw_url);
   }
 
   async send(): Promise<void> {
@@ -74,34 +77,34 @@ class GitHubSyncProvider extends SyncProvider {
 
   private async encryptionEnabled(): Promise<boolean> {
     const encryptEnabled = await this.getInsomniaStoreData(
-    	GitHubSyncProvider.STORE_KEY_ENCRYPT_ENABLED,
+      GitHubSyncProvider.STORE_KEY_ENCRYPT_ENABLED,
     );
-    
+
     return encryptEnabled === 'true';
   }
 
   private async decryptIfRequired(content: string): Promise<string> {
-    if (!await this.encryptionEnabled()) return content;
-    
+    if (!(await this.encryptionEnabled())) return content;
+
     const cipher = await this.createCipher();
-    
+
     return cipher.decrypt(content);
   }
 
   private async encryptIfRequired(content: string): Promise<string> {
-    if (!await this.encryptionEnabled()) return content;
-    
+    if (!(await this.encryptionEnabled())) return content;
+
     const cipher = await this.createCipher();
-    
+
     return cipher.encrypt(content);
   }
 
   private async createCipher(): Promise<Aes256Cipher> {
     const encryptKey = await this.getInsomniaStoreData(
-    	GitHubSyncProvider.STORE_KEY_ENCRYPT_KEY,
+      GitHubSyncProvider.STORE_KEY_ENCRYPT_KEY,
     );
-    if (!encryptKey) throw new Error("Encryption key must be non-empty string");
-    
+    if (!encryptKey) throw new Error('Encryption key must be non-empty string');
+
     return new Aes256Cipher(encryptKey);
   }
 }

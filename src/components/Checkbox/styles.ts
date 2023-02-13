@@ -16,5 +16,5 @@ export const inputStyle = css`
   height: 1rem;
   float: left;
   margin-top: 1px;
-  margin-right: var(--padding-xs)
+  margin-right: var(--padding-xs);
 `;

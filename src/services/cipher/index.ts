@@ -3,18 +3,18 @@ import crypto from 'crypto';
 const CIPHER_ALGORITHM = 'aes-256-ctr';
 
 class Aes256Cipher {
-	key: string;
+  key: string;
 
-	constructor(key: string) {
-		if (!key) throw new TypeError('Key must be non-empty string'); 
+  constructor(key: string) {
+    if (!key) throw new TypeError('Key must be non-empty string');
 
-		this.key = key;
-	}
+    this.key = key;
+  }
 
-	encrypt(input: string): string {
-		if (!input) {
+  encrypt(input: string): string {
+    if (!input) {
       throw new TypeError('Provided "input" must be a non-empty string');
-		}
+    }
 
     const sha256 = crypto.createHash('sha256');
     sha256.update(this.key);
@@ -23,37 +23,43 @@ class Aes256Cipher {
     const iv = crypto.randomBytes(16);
     const cipher = crypto.createCipheriv(CIPHER_ALGORITHM, sha256.digest(), iv);
 
-		const buffer = Buffer.from(input);
+    const buffer = Buffer.from(input);
 
     const ciphertext = cipher.update(buffer);
     const encrypted = Buffer.concat([iv, ciphertext, cipher.final()]);
 
-		return encrypted.toString('base64');
-	}
+    return encrypted.toString('base64');
+  }
 
-	decrypt(encrypted: string): string {
-		if (!input) {
+  decrypt(encrypted: string): string {
+    if (!input) {
       throw new TypeError('Provided "encrypted" must be a non-empty string');
-		}
+    }
 
     const sha256 = crypto.createHash('sha256');
     sha256.update(this.key);
 
     const input = encrypted;
-		input = Buffer.from(encrypted, 'base64');
+    input = Buffer.from(encrypted, 'base64');
 
-		if (input.length < 17) {
-        throw new TypeError('Provided "encrypted" must decrypt to a non-empty string');
-		}
+    if (input.length < 17) {
+      throw new TypeError(
+        'Provided "encrypted" must decrypt to a non-empty string',
+      );
+    }
 
     // Initialization Vector
     const iv = input.slice(0, 16);
-    const decipher = crypto.createDecipheriv(CIPHER_ALGORITHM, sha256.digest(), iv);
+    const decipher = crypto.createDecipheriv(
+      CIPHER_ALGORITHM,
+      sha256.digest(),
+      iv,
+    );
 
     const ciphertext = input.slice(16);
 
-		return decipher.update(ciphertext) + decipher.final();
-	}
+    return decipher.update(ciphertext) + decipher.final();
+  }
 }
 
 export default Aes256Cipher;

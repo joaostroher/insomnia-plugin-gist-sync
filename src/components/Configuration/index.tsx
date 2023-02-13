@@ -68,8 +68,14 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
 
   const handleConfirm = useCallback(() => {
     async function execute() {
-      await insomniaContext.store.setItem('gist-sync:encrypt-key', encryptKey ?? '');
-      await insomniaContext.store.setItem('gist-sync:encrypt-enabled', (encryptEnabled || false).toString());
+      await insomniaContext.store.setItem(
+        'gist-sync:encrypt-key',
+        encryptKey ?? '',
+      );
+      await insomniaContext.store.setItem(
+        'gist-sync:encrypt-enabled',
+        (encryptEnabled || false).toString(),
+      );
       await insomniaContext.store.setItem('gist-sync:api-key', apiKey ?? '');
       await insomniaContext.store.setItem('gist-sync:gist-key', gistKey ?? '');
       await insomniaContext.store.setItem(
@@ -81,40 +87,40 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
   }, [apiKey, gistKey, encryptKey, encryptEnabled, ignoredWorkspaces]);
   return (
     <div css={containerStyle}>
-	<Select
-	  label="Provider"
-	  options={[{ label: 'GitHub', value: 'github' }]}
-	  value="provider"
-	  onChange={event => setProvider(event.target.value)}
-	/>
-	<Checkbox
-	  label="Enable encryption"
-	  value={encryptEnabled}
-	  onChange={event => setEncryptEnabled(event.target.checked)}
-	/>
-	<Input
-	  label="Encryption key"
-	  value={encryptKey}
-	  onChange={event => setEncryptKey(event.target.value)}
-	  disabled={!encryptEnabled}
-	/>
-	<Input
-	  label="Gist API Key"
-	  value={apiKey}
-	  onChange={event => setApiKey(event.target.value)}
-	/>
-	<Select
-	  label="Gist"
-	  options={gistOptions}
-	  value={gistKey}
-	  onChange={event => setGistKey(event.target.value)}
-	/>
-	<Input
-	  label="Ignore Workspaces"
-	  value={ignoredWorkspaces}
-	  placeholder="add comma-separated workspace names"
-	  onChange={event => setIgnoredWorkspaces(event.target.value)}
-	/>
+      <Select
+        label="Provider"
+        options={[{ label: 'GitHub', value: 'github' }]}
+        value="provider"
+        onChange={event => setProvider(event.target.value)}
+      />
+      <Checkbox
+        label="Enable encryption"
+        value={encryptEnabled}
+        onChange={event => setEncryptEnabled(event.target.checked)}
+      />
+      <Input
+        label="Encryption key"
+        value={encryptKey}
+        onChange={event => setEncryptKey(event.target.value)}
+        disabled={!encryptEnabled}
+      />
+      <Input
+        label="Gist API Key"
+        value={apiKey}
+        onChange={event => setApiKey(event.target.value)}
+      />
+      <Select
+        label="Gist"
+        options={gistOptions}
+        value={gistKey}
+        onChange={event => setGistKey(event.target.value)}
+      />
+      <Input
+        label="Ignore Workspaces"
+        value={ignoredWorkspaces}
+        placeholder="add comma-separated workspace names"
+        onChange={event => setIgnoredWorkspaces(event.target.value)}
+      />
       <div css={actionsContainerStyle}>
         <Button label="Cancel" closeModal />
         <Button label="Confirm" onClick={handleConfirm} closeModal />
