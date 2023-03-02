@@ -6,14 +6,14 @@ import Select, { ISelectOption } from '../Select';
 import Button from '../Button';
 import Checkbox from '../Checkbox';
 
-import { containerStyle, actionsContainerStyle } from './styles';
+import { containerStyle, actionsContainerStyle, spaceStyle } from './styles';
 
 interface IConfigurationProps {
   insomniaContext: IInsomniaContext;
 }
 
 const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
-  const [provider, setProvider] = useState<string | null>('github');
+  const [, setProvider] = useState<string | null>('github');
   const [encryptEnabled, setEncryptEnabled] = useState<boolean | null>(false);
   const [encryptKey, setEncryptKey] = useState<string | null>('');
   const [apiKey, setApiKey] = useState<string | null>('');
@@ -93,18 +93,8 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
         value="provider"
         onChange={event => setProvider(event.target.value)}
       />
-      <Checkbox
-        label="Enable encryption"
-        value={encryptEnabled}
-        onChange={event => setEncryptEnabled(event.target.checked)}
-      />
       <Input
-        label="Encryption key"
-        value={encryptKey}
-        onChange={event => setEncryptKey(event.target.value)}
-        disabled={!encryptEnabled}
-      />
-      <Input
+        type="password"
         label="Gist API Key"
         value={apiKey}
         onChange={event => setApiKey(event.target.value)}
@@ -120,6 +110,19 @@ const Configuration: React.FC<IConfigurationProps> = ({ insomniaContext }) => {
         value={ignoredWorkspaces}
         placeholder="add comma-separated workspace names"
         onChange={event => setIgnoredWorkspaces(event.target.value)}
+      />
+      <div css={spaceStyle} />
+      <Checkbox
+        label="Enable encryption"
+        value={encryptEnabled}
+        onChange={event => setEncryptEnabled(event.target.checked)}
+      />
+      <Input
+        label="Encryption key"
+        type="password"
+        value={encryptKey}
+        onChange={event => setEncryptKey(event.target.value)}
+        disabled={!encryptEnabled}
       />
       <div css={actionsContainerStyle}>
         <Button label="Cancel" closeModal />

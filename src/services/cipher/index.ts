@@ -48,16 +48,19 @@ class Aes256Cipher {
     }
 
     // Initialization Vector
-    const iv = buffer.slice(0, 16);
+    const iv = buffer.subarray(0, 16);
     const decipher = crypto.createDecipheriv(
       CIPHER_ALGORITHM,
       sha256.digest(),
       iv,
     );
 
-    const ciphertext = buffer.slice(16);
+    const ciphertext = buffer.subarray(16);
 
-    return decipher.update(ciphertext) + decipher.final();
+    return Buffer.concat([
+      decipher.update(ciphertext),
+      decipher.final(),
+    ]).toString();
   }
 }
 

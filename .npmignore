@@ -9,3 +9,4 @@
 .prettierrc
 package-lock.json
 tsconfig.json
+commitlint.config.js

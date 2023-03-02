@@ -7,11 +7,6 @@ export const containerStyle = css`
   box-sizing: border-box;
 `;
 
-export const labelStyle = css`
-  font-weight: bold;
-  padding-bottom: 5px;
-`;
-
 export const inputStyle = css`
   height: 1rem;
   float: left;

@@ -11,3 +11,7 @@ export const actionsContainerStyle = css`
   align-items: center;
   justify-content: space-between;
 `;
+
+export const spaceStyle = css`
+  margin-top: 10px;
+`;

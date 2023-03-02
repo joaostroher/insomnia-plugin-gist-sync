@@ -1,3 +1,4 @@
+/* eslint-disable camelcase,no-underscore-dangle  */
 type ExportFromInsomniaProps = {
   ignoreWorkspaces?: string[];
 };
@@ -31,7 +32,7 @@ abstract class SyncProvider {
     this.insomniaContext = insomniaContext;
   }
 
-  private normalize(data: object): string {
+  private normalize(data: Record<string, unknown>): string {
     return JSON.stringify(data, null, 2);
   }
 
@@ -40,7 +41,7 @@ abstract class SyncProvider {
   }
 
   private async exportFromInsomniaRaw(): Promise<string> {
-    return await this.insomniaContext.data.export.insomnia({
+    return this.insomniaContext.data.export.insomnia({
       includePrivate: false,
       format: 'json',
     });

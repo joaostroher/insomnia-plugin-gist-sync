@@ -10,6 +10,7 @@ interface IInputProps {
   disabled?: boolean | null | undefined;
   placeholder?: string;
   onChange?: InputOnChangeEvent;
+  type?: 'text' | 'password';
 }
 
 const Input: React.FC<IInputProps> = ({
@@ -18,13 +19,14 @@ const Input: React.FC<IInputProps> = ({
   placeholder,
   onChange,
   disabled,
+  type = 'text',
 }) => {
   return (
     <div css={containerStyle}>
       <label css={labelStyle}>{label}</label>
       <input
         css={inputStyle}
-        type="text"
+        type={type}
         value={value || ''}
         placeholder={placeholder}
         onChange={onChange}

@@ -11,18 +11,26 @@ const workspaceActions: IInsomniaWorkspaceAction[] = [
     label: 'Gist Sync - Send',
     icon: 'fa-upload',
     action: async (context, _) => {
-      const factory = new SyncProviderFactory(context);
-      const provider = factory.getProvider(SyncProviders.GitHub);
-      provider.send();
+      try {
+        const factory = new SyncProviderFactory(context);
+        const provider = factory.getProvider(SyncProviders.GitHub);
+        await provider.send();
+      } catch (error) {
+        alert(error);
+      }
     },
   },
   {
     label: 'Gist Sync - Receive',
     icon: 'fa-download',
     action: async (context, _) => {
-      const factory = new SyncProviderFactory(context);
-      const provider = factory.getProvider(SyncProviders.GitHub);
-      provider.receive();
+      try {
+        const factory = new SyncProviderFactory(context);
+        const provider = factory.getProvider(SyncProviders.GitHub);
+        await provider.receive();
+      } catch (error) {
+        alert(error);
+      }
     },
   },
   {

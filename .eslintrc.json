@@ -38,7 +38,10 @@
       }
     ],
     "react/prop-types": "off",
-    "no-useless-constructor": "off"
+    "no-useless-constructor": "off",
+    "class-methods-use-this": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-alert": "off"
   },
   "settings": {
     "import/resolver": {

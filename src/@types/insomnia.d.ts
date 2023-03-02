@@ -31,8 +31,17 @@ interface IInsomniaContext {
   data: IInsomniaData;
 }
 
+interface IInsomniaWorkspaceActionFunctionModels {
+  workspace: Workspace;
+  requestGroup: Array<RequestGroup>;
+  requests: Array<Request>;
+}
+
 interface IInsomniaWorkspaceActionFunction {
-  (context: IInsomniaContext, models: any): void;
+  (
+    context: IInsomniaContext,
+    models: IInsomniaWorkspaceActionFunctionModels,
+  ): void;
 }
 
 interface IInsomniaWorkspaceAction {

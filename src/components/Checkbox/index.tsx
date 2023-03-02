@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { containerStyle, inputStyle, labelStyle } from './styles';
+import { containerStyle, inputStyle } from './styles';
 
 type InputOnChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => void;
 

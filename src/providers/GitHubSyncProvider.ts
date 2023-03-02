@@ -40,7 +40,7 @@ class GitHubSyncProvider extends SyncProvider {
   ): Promise<string> {
     if (!file.truncated) return file.content;
 
-    return await gitHubService.getByUrl(file.raw_url);
+    return gitHubService.getByUrl(file.raw_url);
   }
 
   async send(): Promise<void> {
@@ -103,6 +103,7 @@ class GitHubSyncProvider extends SyncProvider {
     const encryptKey = await this.getInsomniaStoreData(
       GitHubSyncProvider.STORE_KEY_ENCRYPT_KEY,
     );
+
     if (!encryptKey) throw new Error('Encryption key must be non-empty string');
 
     return new Aes256Cipher(encryptKey);
