@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.7](https://github.com/joaostroher/insomnia-plugin-gist-sync/compare/v0.3.6...v0.3.7) (2023-03-02)
+
+
+### Features
+
+* add ability to ignore workspace on send ([8d7d9f0](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/8d7d9f023e27108318003a6371fd2a112136d4b2))
+* allow to enable encryption ([d64f4c8](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/d64f4c8f34df90d69f9b5ee439c475b4a5af966c))
+
+
+### Bug Fixes
+
+* decrypt using buffer ([9350164](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/93501644e76ab0300eaf305cf0c68b4616d801ce))
+
+
+### Others
+
+* fixes ([0eb2813](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/0eb28133e0805c9717d3920761a3f5f7c9356400))
+* **deps:** bump ansi-regex from 3.0.0 to 3.0.1 ([14034b1](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/14034b1214f644b2753d958a74168d78f6a241b4))
+* **deps:** bump ansi-regex from 3.0.0 to 3.0.1 ([73dec33](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/73dec3320aa22cf3defa6979acb30d7f031e192a))
+* **deps:** bump axios from 0.21.1 to 0.21.2 ([f73ec20](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/f73ec20e0bf086f2fb21054826fe6a37fbcf7c6f))
+* **deps:** bump decode-uri-component from 0.2.0 to 0.2.2 ([2ce2f44](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/2ce2f44854232dcf1a4517120e6501cfb48c1e22))
+* **deps:** bump follow-redirects from 1.13.1 to 1.14.8 ([99f5392](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/99f5392ba78a3f2f18494b81d2a1f814eaa2639c))
+* **deps:** bump follow-redirects from 1.14.5 to 1.14.9 ([37f1087](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/37f1087547c491e4397a981834d669dc7a45475f))
+* **deps:** bump glob-parent from 5.1.1 to 5.1.2 ([5a05c45](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/5a05c45c62667366e5315550e0da2a65f27b87b6))
+* **deps:** bump json5 and tsconfig-paths ([fdc5eb4](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/fdc5eb459659f190fab7a49b670540bef12e2916))
+* **deps:** bump trim-newlines and meow ([633cd28](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/633cd28f29d0419a0799bcd81adf62755c125245))
+* fix formatting ([029ea36](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/029ea36fe30d81c1239ab89795580fd5f66361f7))
+* **deps:** bump json5 from 1.0.1 to 1.0.2 ([b70cdb5](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/b70cdb56384a23804ad6880a9b9db8140d070256))
+* **deps:** bump minimatch from 3.0.4 to 3.1.2 ([04ed262](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/04ed262163877520075165a10bd2c321c037405c))
+* **deps:** bump shelljs from 0.8.4 to 0.8.5 ([d062f13](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/d062f1357a9218b7dad211a9e7d936fc2970d154))
+* **deps:** bump trim-off-newlines from 1.0.1 to 1.0.3 ([957fde4](https://github.com/joaostroher/insomnia-plugin-gist-sync/commit/957fde424a87e063f3baf24781af922f3f59283c))
+
 ### [0.3.6](https://github.com/joaostroher/insomnia-plugin-gist-sync/compare/v0.3.5...v0.3.6) (2021-10-08)
 
 
